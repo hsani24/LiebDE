@@ -12,4 +12,7 @@ struct Homepage: Identifiable, Hashable, Decodable {
   var homepage_en: String
   var categories: [Category]
   var homepage_tr: String
+ //   var homepage_pr: String
+   // var homepage_ar: String
+    //var homepage_ukr: String
 }

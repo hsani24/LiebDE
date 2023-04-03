@@ -37,6 +37,8 @@
 		228393A229C0ADFF00964312 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228393A129C0ADFF00964312 /* Language.swift */; };
 		228393A629C0AE8D00964312 /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228393A529C0AE8D00964312 /* StartPage.swift */; };
 		228393A929C1C24A00964312 /* intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228393A829C1C24A00964312 /* intro.swift */; };
+		22C0BD8B29D2FE2300A789F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C0BD8A29D2FE2300A789F1 /* AppDelegate.swift */; };
+		22C0BD8D29D5910100A789F1 /* IntroText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C0BD8C29D5910100A789F1 /* IntroText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		228393A129C0ADFF00964312 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		228393A529C0AE8D00964312 /* StartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
 		228393A829C1C24A00964312 /* intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intro.swift; sourceTree = "<group>"; };
+		22C0BD8A29D2FE2300A789F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22C0BD8C29D5910100A789F1 /* IntroText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2216F85329C9FDE7004E3819 /* GoogleService-Info.plist */,
-				225F256A29C360F70064CC55 /* Resources */,
-				2283939829B1F66300964312 /* Model */,
-				2283938A29B1F28200964312 /* View */,
-				2283939029B1F30300964312 /* TabBarHost.swift */,
-				22618F5929B0EFA4003B5959 /* ViewModel */,
+				22618F2E29B0EF56003B5959 /* LiebDE-1 */,
 				22618F3F29B0EF57003B5959 /* LiebDE-1Tests */,
 				22618F4929B0EF57003B5959 /* LiebDE-1UITests */,
 				22618F2D29B0EF56003B5959 /* Products */,
@@ -153,6 +153,11 @@
 		22618F2E29B0EF56003B5959 /* LiebDE-1 */ = {
 			isa = PBXGroup;
 			children = (
+				225F256A29C360F70064CC55 /* Resources */,
+				22618F5929B0EFA4003B5959 /* ViewModel */,
+				2283938A29B1F28200964312 /* View */,
+				2283939829B1F66300964312 /* Model */,
+				22C0BD8A29D2FE2300A789F1 /* AppDelegate.swift */,
 				22618F2F29B0EF56003B5959 /* LiebDE_1App.swift */,
 				22618F3129B0EF56003B5959 /* ContentView.swift */,
 				22618F3329B0EF57003B5959 /* Assets.xcassets */,
@@ -160,7 +165,8 @@
 				225F252229C207190064CC55 /* Liebde.gif */,
 				22618F3529B0EF57003B5959 /* Preview Content */,
 			);
-			path = "LiebDE-1";
+			name = "LiebDE-1";
+			path = "View/LiebDE-1";
 			sourceTree = "<group>";
 		};
 		22618F3529B0EF57003B5959 /* Preview Content */ = {
@@ -200,11 +206,13 @@
 		2283938A29B1F28200964312 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2283939029B1F30300964312 /* TabBarHost.swift */,
 				228393A729C0AEB300964312 /* Introductions */,
 				2283938B29B1F29700964312 /* Search */,
 				2283938F29B1F2E500964312 /* Home */,
 			);
-			path = View;
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2283938B29B1F29700964312 /* Search */ = {
@@ -223,7 +231,6 @@
 				2283939F29B2499700964312 /* HomepageDetailScreen.swift */,
 				2283939429B1F3A700964312 /* CategoryView.swift */,
 				2283939629B1F3B600964312 /* CategoryDetailScreen.swift */,
-				22618F2E29B0EF56003B5959 /* LiebDE-1 */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 			children = (
 				2283939929B1F73600964312 /* Category.swift */,
 				2283939B29B241B300964312 /* Homepage.swift */,
+				22C0BD8C29D5910100A789F1 /* IntroText.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,10 +406,12 @@
 				22618F3029B0EF56003B5959 /* LiebDE_1App.swift in Sources */,
 				2283939C29B241B300964312 /* Homepage.swift in Sources */,
 				2283938D29B1F2CA00964312 /* SearchTab.swift in Sources */,
+				22C0BD8B29D2FE2300A789F1 /* AppDelegate.swift in Sources */,
 				2283939729B1F3B600964312 /* CategoryDetailScreen.swift in Sources */,
 				2283939A29B1F73600964312 /* Category.swift in Sources */,
 				228393A029B2499700964312 /* HomepageDetailScreen.swift in Sources */,
 				228393A229C0ADFF00964312 /* Language.swift in Sources */,
+				22C0BD8D29D5910100A789F1 /* IntroText.swift in Sources */,
 				225F251F29C1F96A0064CC55 /* GifImage.swift in Sources */,
 				225F256C29C3611D0064CC55 /* Extensions.swift in Sources */,
 				2283939329B1F39800964312 /* HomeTab.swift in Sources */,

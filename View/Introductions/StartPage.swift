@@ -8,35 +8,50 @@
 import SwiftUI
 
 struct StartPage: View {
+    func buttonPressed(){
+        print("button pressed")
+    }
     var body: some View {
         
-        ZStack{
-            LinearGradient(colors: [.black, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
-            
-            VStack{
-                GifImage("Liebde")
-                    .frame(width: 300, height: 300, alignment: .top)
-                    .cornerRadius(20)
-                    .scaledToFill()
-                Text("Your Second Home")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.white)
+        NavigationStack {
+            ZStack{
+                LinearGradient(colors: [.black, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
                 
-                GifImage("giphy")
-                    .frame(width: 300, height: 300, alignment: .bottom)
-                    .cornerRadius(20)
-                    .scaledToFill()
+                VStack{
+                    NavigationLink("Login") {
+                        Login(viewModel: AppViewModel())
+                            
+                        
+                    }
+                    GifImage("Liebde")
+                        .frame(width: 300, height: 300, alignment: .top)
+                        .cornerRadius(20)
+                        .scaledToFill()
+                    
+                    Text("Your Second Home")
+                        .font(.largeTitle)
+                        .foregroundColor(Color.white)
+                    Button(action:{
+                        buttonPressed()
+                        
+                    }){
+                        
+                        GifImage("giphy")
+                            .frame(width: 300, height: 300, alignment: .bottom)
+                            .cornerRadius(20)
+                            .scaledToFill()
+                        
+                    }
+                }
+                
             }
-                   
-            }
-        
+            
+           
+            
         }
-    
-   
+        
     }
-
-
-
+}
 struct StartPage_Previews: PreviewProvider {
     static var previews: some View {
         StartPage()

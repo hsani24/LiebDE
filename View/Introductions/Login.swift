@@ -55,7 +55,7 @@ class AppViewModel: ObservableObject {
 
 struct Login: View {
     
-    @EnvironmentObject var viewModel: AppViewModel
+    @StateObject var viewModel: AppViewModel = AppViewModel()
     
     var body: some View {
         NavigationView {
@@ -91,7 +91,7 @@ struct SignInView: View {
             Image(systemName: "person")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 150, height: 150)
+                .frame(width: 100, height: 100)
             
             VStack {
                 TextField("Email Address", text: $email)
@@ -101,7 +101,7 @@ struct SignInView: View {
                     .background(Color(.secondarySystemBackground))
                 
                 
-                SecureField("Email Address", text: $password)
+                SecureField("Password", text: $password)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .padding()
@@ -153,7 +153,7 @@ struct SignUpView: View {
                     .background(Color(.secondarySystemBackground))
                 
                 
-                SecureField("Email Address", text: $password)
+                SecureField("Password", text: $password)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .padding()
@@ -179,5 +179,10 @@ struct SignUpView: View {
         }
         .navigationTitle("Create Account")
         
+    }
+}
+struct MyPreviewProvider_Previews: PreviewProvider {
+    static var previews: some View {
+        SignInView()
     }
 }

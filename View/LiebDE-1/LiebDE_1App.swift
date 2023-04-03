@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct LiebDE_1App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate1.self) var delegate
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -21,7 +21,6 @@ struct CategoryView: View {
                 Color.white
                 
                 HStack{
-                    
                     AsyncImage(url: URL(string: imageURL ?? "")) { image in
                         image.resizable()
                             .frame(width: 100, height: 100)
@@ -36,6 +35,7 @@ struct CategoryView: View {
                        Button(action: sendMessage){
                             Text("Für Details")
                                 .tint(Color.blue)
+                                
                         }
                         .padding()
                         .background(Color.white)

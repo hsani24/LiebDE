@@ -14,12 +14,13 @@ struct Language: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Image("logo_liebde")
+                Image("germany")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .frame(width:geo.size.width, height: geo.size.height, alignment: .center)
                     .opacity(1.0)
+                    .blur(radius: 2)
                 
                 VStack{
                 Text("Please Select your language")
@@ -79,6 +80,7 @@ struct Language: View {
                         Image("Ukrainian")
                             .resizable()
                             .frame(width: 120, height: 90)
+                            .cornerRadius(20)
                         
                     }
                 }

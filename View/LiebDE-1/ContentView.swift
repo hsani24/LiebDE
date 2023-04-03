@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = DataViewModel()
     var body: some View {
        
-        TabBarHost()
+        HomeTab().environmentObject(viewModel)
         
     }
 }
