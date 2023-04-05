@@ -12,30 +12,34 @@ struct intro: View {
     //var homepage: Homepage
     
     var body: some View {
-        ZStack{
-            LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
-            Text("Homepage")
-                .foregroundColor(Color.white)
-                .padding()
-            ZStack{
-                Image("intro")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .opacity(1.0)
-                    .blur(radius: 9)
-                
-                ScrollView {
-                    VStack {
-                        Image("düsseldorf1")
+        NavigationStack {
+            
+                ZStack{
+                    
+                    LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    Text("Homepage")
+                        .foregroundColor(Color.white)
+                        .padding()
+                    ZStack{
+                        
+                        Image("intro")
                             .resizable()
-                            .frame(width: 330, height: 200)
-                            .cornerRadius(30)
-                        Text(IntroText().titles[0])
-                            .font(.headline)
+                            .scaledToFill()
+                            .edgesIgnoringSafeArea(.all)
+                            .opacity(1.0)
+                            .blur(radius: 40)
                         
-                        
-                        Text("""
+                        ScrollView {
+                            VStack {
+                                Image("düsseldorf1")
+                                    .resizable()
+                                    .frame(width: 330, height: 200)
+                                    .cornerRadius(30)
+                                Text(IntroText().titles[0])
+                                    .font(.headline)
+                                
+                                
+                                Text("""
 "Am Rhein den Abend ausklingen lassen, im Fußballstadion mit der Menge mitfiebern oder auf der Kö shoppen gehen. Das alles ist in Düsseldorf möglich. Schaffen Sie sich ein eigenes Bild von der Landeshauptstadt. Lassen Sie sich dabei von unseren Sehenswürdigkeiten inspirieren oder machen Sie eine der von uns vorgeschlagenen Touren."
 
 Orte in Düsseldorf
@@ -50,16 +54,24 @@ In Sachen Freizeit kann die Landeshauptstadt mit einigen Angeboten aufwarten: So
 Zusammen in Düsseldorf
 Düsseldorf steht für Internationalität, Vielseitigkeit und Offenheit. Zusammenleben wird in der Stadt groß geschrieben. In der Landeshauptstadt wohnen Bürgerinnen und Bürger aus rund 180 Nationen. In der Stadt gibt es zahlreiche verschiedene Kulturen zu entdecken. Düsseldorf ist eine spannende Stadt für Jung und Alt. Wer mit Kindern unterwegs ist, findet hier passende Freizeittipps. Jede Besucherin und jeder Besucher soll die Stadt erkunden können: Deshalb gibt es für Touristen auch barrierefreie Angebote.
 """).font(.callout).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                Image("dusseldorf1 1")
+                                    .resizable()
+                                    .frame(width: 330, height: 200)
+                                    .cornerRadius(30)
+                                
+                            }
+                            .frame(width: 330)
+                            .foregroundColor(Color.white)
+                            NavigationLink("Login") {
+                                Login()
+                            
+                            
+                            
+                        }
                         
                         
                     }
-                    .frame(width: 330)
-                    .foregroundColor(Color.white)
-                    
-                    
                 }
-                
-                
             }
         }
     }

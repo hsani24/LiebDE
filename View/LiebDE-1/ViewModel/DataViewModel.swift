@@ -18,7 +18,7 @@ import SwiftUI
     }
     
     func fetchAPI(completion: @escaping ([Homepage]) -> ()){
-        guard let url = URL(string: "https://public.syntax-institut.de/apps/batch3/Sani/saniApi.json") else { return }
+        guard let url = URL(string: "https://public.syntax-institut.de/apps/batch3/Sani/data.json") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let homepage = try! JSONDecoder().decode([Homepage].self, from: data!)
             DispatchQueue.main.async {

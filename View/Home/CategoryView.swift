@@ -9,10 +9,8 @@ import SwiftUI
 
 struct CategoryView: View {
     
-    var name : String
-    var imageName : String?
-    var description : String
-    var imageURL : String?
+    
+    var category: Category
     var body: some View {
         ZStack{
             LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -21,9 +19,10 @@ struct CategoryView: View {
                 Color.white
                 
                 HStack{
-                    AsyncImage(url: URL(string: imageURL ?? "")) { image in
-                        image.resizable()
-                            .frame(width: 100, height: 100)
+                    AsyncImage(url: URL(string: category.image ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 120, height: 120)
                             .cornerRadius(20)
                             .tint(Color.white)
                     } placeholder: {
@@ -31,10 +30,9 @@ struct CategoryView: View {
                         
                     }
                     VStack{
-                        Text(name)
+                        Text(category.address!)
                        Button(action: sendMessage){
-                            Text("Für Details")
-                                .tint(Color.blue)
+                            
                                 
                         }
                         .padding()
@@ -56,7 +54,7 @@ struct CategoryView: View {
     
     struct CategoryView_Previews: PreviewProvider {
         static var previews: some View {
-            CategoryView( name: "Düsseldorf", imageName: "LebenInDeutschland", description: "Herzlich Willkommen", imageURL: "https://public.syntax-institut.de/apps/batch3/Sani/pics/sicherheit.jpeg")
+            CategoryView(category: Category(address: "letterstrasse", category_de: "", website: "", info_tr: "", info_de: "", image: "https://public.syntax-institut.de/apps/batch3/Sani/pics/sicherheit.jpeg", category_tr: "", tel: "", category_en: "", info_en: "", info_pr: "", info_ar: "", info_ukr: ""))
         }
     }
     

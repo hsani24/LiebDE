@@ -8,35 +8,47 @@
 import SwiftUI
 
 struct HomepageView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     var homepage: Homepage
     var body: some View {
+        
+            
+        
         ZStack{
-            LinearGradient(colors: [.white, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [.blue, .white], startPoint: .bottom, endPoint: .topTrailing)
             
             ZStack{
              
                 Color.white
               
-                HStack(alignment: .center, spacing: 10){
+                HStack(alignment: .center, spacing: 5){
                     
-                    Text(homepage.homepage_de)
+                    Text(homepage.getName(selectedLanguage: viewModel.selectedLanguage))
                         .font(.body)
                         .frame(width: 150, height: 150, alignment: .center)
                         .foregroundColor(.blue)
                         .shadow(color: Color.white, radius: 5)
                         
                     Spacer()
-                    Image("LebenInDeutschland")
-                        .resizable()
-                        .frame(width: 100, height: 100, alignment: .trailing)
-                        .cornerRadius(8)
-                        .foregroundColor(.blue)
+                    AsyncImage(url: URL(string: homepage.hometab_image ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .cornerRadius(20)
+                            .tint(Color.white)
+                    } placeholder: {
+                        ProgressView()
+                        
+                    }
             }
                 
         }
             .cornerRadius(20)
             .padding()
-            .frame(width: 200)
+            .frame(width: 350)
+            .onAppear{
+                print(homepage.hometab_image)
+            }
         }
     }
     func sendMessage(){
@@ -45,7 +57,7 @@ struct HomepageView: View {
     struct HomepageView_Previews: PreviewProvider {
         static var previews: some View {
             HomepageView(homepage: Homepage(homepage_de: "homepage_de", homepage_en: "homepage_en", categories:
-                                                [], homepage_tr: "homepage_tr"))
+                                                [], homepage_tr: "homepage_tr", homepage_pr: "homepage_pr", homepage_ar: "homepage_ar", homepage_ukr: "homepage_ukr", hometab_image: ""))
                          
         }
     }

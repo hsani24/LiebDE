@@ -21,9 +21,9 @@ struct Category: Identifiable, Hashable, Decodable {
   var tel:String?
   var category_en: String
   var info_en: String
-//    var info_pr: String
-  //  var info_ar: String
-    //var info_ukr: String
+  var info_pr: String
+  var info_ar: String
+  var info_ukr: String
 }
 
 

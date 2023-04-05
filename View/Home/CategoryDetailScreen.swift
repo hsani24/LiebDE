@@ -15,10 +15,10 @@ struct CategoryDetailScreen: View {
             
         ZStack{
             ScrollView{
-            LinearGradient(colors: [.blue, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+            
                 
             Text(category.info_de)
-                .frame(width: 340)
+                .frame(width: 350)
                 .font(.title2)
                 .foregroundColor(Color.black)
             
@@ -28,7 +28,7 @@ struct CategoryDetailScreen: View {
 }
 struct CategoryDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetailScreen(category: Category(category_de: "Info_de", info_tr: "", info_de: "", category_tr: "", category_en: "", info_en: ""))
+        CategoryDetailScreen(category: Category(address: "", category_de: "Info_de", website: "", info_tr: "", info_de: "", image: "", category_tr: "", email: "", tel: "", category_en: "", info_en: "", info_pr: "", info_ar: "", info_ukr: "" ))
     }
 }
 

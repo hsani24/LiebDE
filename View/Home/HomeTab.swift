@@ -10,28 +10,46 @@ import SwiftUI
 struct HomeTab: View {
     
     @EnvironmentObject var viewmodel: DataViewModel
-    
+    @EnvironmentObject var authViewModel : AppViewModel
     
     var body: some View {
-        NavigationStack{
-            List{
-                ForEach (viewmodel.homepages){ homepage in
+       
+            VStack{
+                Button(action: {
+                    authViewModel.signOut()
                     
+                },
+                       label: {
+                    Text ("Sign Out")
+                        .foregroundColor(Color.blue)
+                })
+                Button(action: {
                     
-                    NavigationLink(value: homepage){
+                    authViewModel.resetLanguage()
+                },
+                       label: {
+                    Text ("Change Language")
+                        .foregroundColor(Color.blue)
+                })
+                List{
+                    ForEach (viewmodel.homepages){ homepage in
                         
-                        HomepageView(homepage: homepage)
                         
-                    }.navigationDestination(for: Homepage.self){ homepage in
-                        HomepageDetailScreen(homepage: homepage)
+                        NavigationLink(value: homepage){
+                            
+                            HomepageView(homepage: homepage)
+                            
+                        }.navigationDestination(for: Homepage.self){ homepage in
+                            HomepageDetailScreen(homepage: homepage)
+                        }
+                    
                     }
-                }
-                
-            } .listStyle(.plain)
+                    
+                } .listStyle(.plain)
+            }
         }
-    }
-}
     
+}
     struct HomeTab_Previews: PreviewProvider {
         static var previews: some View {
             HomeTab().environmentObject(DataViewModel())

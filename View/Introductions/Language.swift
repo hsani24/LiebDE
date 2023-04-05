@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct Language: View {
-    func buttonPressed(){
+    func buttonPressed(language: Language1){
         print("button pressed")
+        viewModel.selectLanguage(language : language)
     }
+    @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -23,13 +25,21 @@ struct Language: View {
                     .blur(radius: 2)
                 
                 VStack{
-                Text("Please Select your language")
+                    Button(action: {
+                        viewModel.signOut()},
+                           label: {
+                        Text("Sign Out")
+                            .foregroundColor(Color.blue)
+                    
+                    })
+                Text("Please Select Your Language")
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
+                        .padding()
                 
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.de)
                         
                     }){
                         Image("Flags")
@@ -38,7 +48,7 @@ struct Language: View {
                         
                     }
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.en)
                         
                     }){
                         Image("English")
@@ -47,7 +57,7 @@ struct Language: View {
                         
                     }
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.tr)
                         
                     }){
                         Image("Turkish")
@@ -56,7 +66,7 @@ struct Language: View {
                         
                     }
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.pr)
                         
                     }){
                         Image("Persian")
@@ -65,7 +75,7 @@ struct Language: View {
                     
                     }
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.ar)
                         
                     }){
                         Image("Arabic")
@@ -74,14 +84,14 @@ struct Language: View {
                           
                     }
                     Button(action:{
-                        buttonPressed()
+                        buttonPressed(language: Language1.ukr)
                         
                     }){
                         Image("Ukrainian")
                             .resizable()
                             .frame(width: 120, height: 90)
                             .cornerRadius(20)
-                        
+                       
                     }
                 }
             }
@@ -90,6 +100,6 @@ struct Language: View {
 }
 struct Language_Previews: PreviewProvider {
     static var previews: some View {
-        Language()
+        Language().environmentObject(AppViewModel())
     }
 }

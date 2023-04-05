@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = DataViewModel()
+    
     var body: some View {
        
-        HomeTab().environmentObject(viewModel)
-        
+            StartPage().environmentObject(viewModel).environmentObject(AppViewModel())
+            
+        }
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
