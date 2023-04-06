@@ -30,7 +30,7 @@ struct CategoryView: View {
                         
                     }
                     VStack{
-                        Text(category.address!)
+                        Text(category.category_de)
                        Button(action: sendMessage){
                             
                                 
